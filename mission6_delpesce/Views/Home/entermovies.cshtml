@@ -1,0 +1,77 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+
+
+@model Movies
+<h1> Enter A Movie: </h1>
+<br>
+
+<form method="post"> 
+    <label asp-for="Category">Category</label>
+    <select asp-for="Category" required>
+        <option value="">--Select--</option>
+        <option value="Action/Adventure">Action/Adventure</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Drama">Drama</option>
+        <option value="Family">Family</option>
+        <option value="Horror/Suspense">Horror/Suspense</option>
+        <option value="Miscellaneous">Miscellaneous</option>
+        <option value="Television">Television</option>
+    </select>
+    <br><br>
+
+    <label asp-for="Title">Title</label>
+    <input asp-for ="Title" required />
+    <br><br>
+
+    <label asp-for="Year">Year</label>
+    <input asp-for="Year" type="number" id="year" name="year" min="1900" max="2025" required>
+    <br><br>
+
+    <label asp-for="Director">Director</label>
+    <input asp-for="Director" required />
+    <br><br>
+
+
+
+    <label asp-for="Rating">Rating</label>
+    <select asp-for="Rating">
+        <option value="G">G</option>
+        <option value="PG">PG</option>
+        <option value="PG-13">PG-13</option>
+        <option value="R">R</option>
+    </select>
+    <br><br>
+
+
+    <label asp-for="Edited"> Edited</label>
+    <select asp-for="Edited">
+        <option value="">--Select--</option>
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select>
+    <br><br>
+
+
+
+    <label asp-for="Lent">Lent To:</label>
+    <input asp-for ="Lent"/>
+
+    <br><br>
+
+    <label asp-for="Notes">Notes</label>
+    <input asp-for="Notes" type="text" id="notes" name="notes" maxlength="25"><br><br>
+
+
+    <button type="submit" > Submit Movie Entry </button>
+
+
+</form>
+
+
+
