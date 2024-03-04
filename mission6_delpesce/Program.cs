@@ -1,7 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using mission6_delpesce.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<MovieCollectionContext>(options =>
+{
+    options.UseSqlite(builder.Configuration["ConnectionStrings:BlahConnection"]);
+});
 
 var app = builder.Build();
 

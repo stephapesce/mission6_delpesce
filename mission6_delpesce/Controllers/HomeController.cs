@@ -6,6 +6,12 @@ namespace mission6_delpesce.Controllers
 {
     public class HomeController : Controller
     {
+        private MovieCollectionContext _context;
+        public HomeController(MovieCollectionContext temp) //Constructor
+        { 
+            _context = temp;
+        
+        }
 
         public IActionResult entermovies()
         {
@@ -30,7 +36,12 @@ namespace mission6_delpesce.Controllers
 
         [HttpPost]
         public IActionResult Entermovies(Movies response)
+
         {
+
+            _context.Movies.Add(response); //add record to the database 
+            _context.SaveChanges();
+
             return View("conf", response);
         }
 
