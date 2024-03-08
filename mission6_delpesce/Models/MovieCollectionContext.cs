@@ -8,6 +8,9 @@ namespace mission6_delpesce.Models
         {  
         }
     
-        public DbSet<Movies> Movies { get; set; }
+        public DbSet<Movie> Movies { get; set; }
+
+        public DbSet<Category> Categories { get; set; }
+
     }
 }
